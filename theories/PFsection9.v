@@ -570,7 +570,7 @@ have{cEE} [F [outF [inF outFK inFK] E_F]]:
     by move=> a nz_a; rewrite /inv insubT /= (f_invF (mulI (exist _ _ _))).
   pose Funit := FieldUnitMixin mulV inv0.
   pose FringUcl := @GRing.ComUnitRing.Class _ (GRing.ComRing.class Fring) Funit.
-  have Ffield := @FieldMixin (GRing.ComUnitRing.Pack FringUcl nat) _ mulV inv0.
+  have Ffield := @FieldMixin (GRing.ComUnitRing.Pack FringUcl) _ mulV inv0.
   pose F := FieldType (IdomainType _ (FieldIdomainMixin Ffield)) Ffield.
   by exists [finFieldType of F], (AddRMorphism outRM); first exists inF.
 pose in_uF (a : F) : {unit F} := insubd (1 : {unit F}) a.
